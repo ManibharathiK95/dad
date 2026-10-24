@@ -130,14 +130,35 @@ body {
 .gig-item b { font-weight:900; color:var(--mint); }
 .gig-item .nb { font-weight:900; color:var(--ink); }
 
-/* ---------- kit ---------- */
-.app-row { display:flex; align-items:center; gap:12px; padding:10px 2px; border-bottom:1px solid #F6EFE5; text-decoration:none; color:var(--ink); }
-.app-row:last-child { border-bottom:none; }
-.app-row .ic { flex:0 0 auto; width:42px; height:42px; border-radius:12px; background:var(--peach-tint); font-size:21px; text-align:center; line-height:42px; }
-.app-row .t { flex:1 1 auto; min-width:0; }
-.app-row .t b { display:block; font:800 14px/1.2 'Baloo 2',sans-serif; }
-.app-row .t span { font:600 11.5px/1.35 'Nunito',sans-serif; color:var(--ink-soft); }
-.app-row .go { flex:0 0 auto; font:800 11px/1 'Nunito',sans-serif; color:var(--peach); letter-spacing:.5px; }
+/* ---------- notes ---------- */
+.add-row { display:flex; gap:8px; margin-top:10px; }
+.add-row input { border:1.5px solid var(--peach-line); border-radius:12px; padding:10px 12px; font:700 13.5px/1.2 'Nunito',sans-serif; background:#FFFDFA; outline:none; color:var(--ink); }
+.add-row input:focus { border-color:var(--peach); }
+.add-row input[type=text] { flex:1 1 auto; min-width:0; }
+.add-row input[type=date] { flex:0 0 116px; }
+.ap-row { display:flex; gap:12px; align-items:center; padding:10px 2px; border-bottom:1px solid #F6EFE5; }
+.ap-row:last-child { border-bottom:none; }
+.ap-date { flex:0 0 46px; text-align:center; background:var(--peach-tint); border:1px solid var(--peach-line); border-radius:12px; padding:7px 0 6px; }
+.ap-date b { display:block; font:800 16px/1 'Baloo 2',sans-serif; color:var(--peach-deep); }
+.ap-date span { font:800 9px/1 'Nunito',sans-serif; letter-spacing:1.2px; text-transform:uppercase; color:var(--ink-soft); }
+.ap-t { flex:1 1 auto; min-width:0; }
+.ap-t b { display:block; font:800 14px/1.25 'Baloo 2',sans-serif; }
+.ap-t span { display:block; font:600 11.5px/1.35 'Nunito',sans-serif; color:var(--ink-soft); margin-top:2px; }
+.tag { display:inline-block; margin-top:5px; font:800 9.5px/1 'Nunito',sans-serif; letter-spacing:.8px; text-transform:uppercase; color:var(--blue); background:var(--blue-tint); border-radius:999px; padding:4px 9px; }
+.tag.hot { color:#fff; background:var(--peach); }
+.tag.past { color:var(--ink-soft); background:#F4EADF; }
+.lt-row { display:flex; gap:10px; align-items:flex-start; padding:9px 2px; border-bottom:1px solid #F6EFE5; }
+.lt-row:last-child { border-bottom:none; }
+.lt-row .tx { flex:1 1 auto; font:600 13.5px/1.45 'Nunito',sans-serif; }
+.lt-row.did .tx { color:var(--ink-soft); text-decoration:line-through; }
+.lt-row .when { display:inline-block; margin-left:6px; font:800 9.5px/1 'Nunito',sans-serif; letter-spacing:.5px; text-transform:uppercase; color:var(--blue); background:var(--blue-tint); border-radius:999px; padding:3px 8px; vertical-align:2px; }
+.x-btn { flex:0 0 auto; border:none; background:none; color:#C9B4A2; font:800 15px/1 'Nunito',sans-serif; padding:6px 4px; }
+.x-btn:active { color:var(--blush); }
+.note-card { background:#FFFCF5; border:1px solid var(--peach-line); border-radius:16px; padding:12px 14px; margin-bottom:10px; position:relative; }
+.note-card b { display:block; font:800 14px/1.25 'Baloo 2',sans-serif; color:var(--peach-deep); margin-bottom:3px; padding-right:22px; }
+.note-card p { font:600 13px/1.5 'Nunito',sans-serif; white-space:pre-wrap; overflow-wrap:break-word; }
+.note-card .x-btn { position:absolute; top:9px; right:9px; }
+.empty { font:700 12.5px/1.5 'Nunito',sans-serif; color:var(--ink-soft); text-align:center; padding:6px 0 4px; }
 .tool-big { display:flex; flex-direction:column; align-items:center; gap:8px; padding:8px 0 4px; }
 .kick-btn { width:132px; height:132px; border-radius:50%; border:none; background:linear-gradient(145deg,var(--peach),var(--peach-deep)); color:#fff; font:800 22px/1.1 'Baloo 2',sans-serif; box-shadow:0 10px 24px rgba(184,92,60,.35); }
 .kick-btn:active { transform:scale(.95); }
@@ -152,10 +173,32 @@ body {
 .ct-row b { color:var(--blush); }
 .ct-alert { display:none; background:var(--blush); color:#fff; border-radius:14px; padding:12px 14px; font:800 13.5px/1.4 'Nunito',sans-serif; margin-top:10px; }
 .ct-alert.show { display:block; }
-.bag-cat { font:900 11.5px/1.2 'Nunito',sans-serif; letter-spacing:2px; text-transform:uppercase; margin:13px 0 2px; display:flex; align-items:center; gap:10px; }
-.bag-cat::after { content:''; flex:1 1 auto; height:1.5px; opacity:.45; border-radius:1px; }
 .reset-line { text-align:center; margin:6px 0 10px; }
 .reset-line button { border:none; background:none; font:700 12px/1 'Nunito',sans-serif; color:var(--blush); text-decoration:underline; }
+
+/* ---------- expenses ---------- */
+.xf .frow { display:flex; gap:8px; margin-top:8px; }
+.xf input, .xf select { flex:1 1 auto; min-width:0; border:1.5px solid var(--peach-line); border-radius:12px; padding:10px 12px; font:700 14px/1.2 'Nunito',sans-serif; background:#FFFDFA; outline:none; color:var(--ink); }
+.xf input:focus, .xf select:focus { border-color:var(--peach); }
+.xf #xfA { flex:0 0 120px; }
+.xf .go { width:100%; margin-top:10px; padding:11px 0; font-size:13px; }
+.mh { display:flex; align-items:center; gap:10px; padding:2px 2px 10px; cursor:pointer; }
+.mh .arr { flex:0 0 16px; text-align:center; font-size:14px; color:var(--peach-deep); transition:transform .15s; }
+.mh.folded .arr { transform:rotate(-90deg); }
+.mh-t { flex:1 1 auto; min-width:0; }
+.mh-t b { display:block; font:800 16px/1.2 'Baloo 2',sans-serif; color:var(--ink); }
+.mh-t span { font:700 11px/1.3 'Nunito',sans-serif; color:var(--ink-soft); }
+.mh-cats { font:700 11px/1.4 'Nunito',sans-serif; color:var(--ink-soft); padding:0 28px 8px; margin-top:-5px; }
+.mh-r { flex:0 0 auto; display:flex; align-items:center; gap:10px; }
+.mh-r b { font:800 13.5px/1 'Nunito',sans-serif; color:var(--peach-deep); }
+.mh-add { flex:0 0 auto; border:none; background:var(--peach-tint); color:var(--peach-deep); width:28px; height:28px; border-radius:50%; font:800 15px/28px 'Baloo 2',sans-serif; padding:0; text-align:center; }
+.x-row { display:flex; align-items:center; gap:10px; padding:9px 2px; border-bottom:1px solid #F6EFE5; }
+.x-row:last-child { border-bottom:none; }
+.x-row .x-main { flex:1 1 auto; min-width:0; }
+.x-row .x-main b { display:block; font:700 13.5px/1.3 'Nunito',sans-serif; }
+.x-row .x-main span { font:600 11px/1.3 'Nunito',sans-serif; color:var(--ink-soft); }
+.x-row .x-amt { flex:0 0 auto; font:800 13px/1 'Nunito',sans-serif; color:var(--ink); }
+.ex-folded { display:none; }
 
 /* ---------- tab bar ---------- */
 .tabbar {
@@ -188,6 +231,17 @@ body {
   font:700 15px/1.2 'Nunito',sans-serif; color:var(--ink); background:#FFFDFA; outline:none;
 }
 .sheet input:focus { border-color:var(--peach); }
+.sheet textarea {
+  width:100%; border:1.5px solid var(--peach-line); border-radius:12px; padding:11px 12px;
+  font:700 15px/1.45 'Nunito',sans-serif; color:var(--ink); background:#FFFDFA; outline:none;
+  resize:vertical; min-height:96px;
+}
+.sheet textarea:focus { border-color:var(--peach); }
+.sheet select {
+  width:100%; border:1.5px solid var(--peach-line); border-radius:12px; padding:11px 12px;
+  font:700 15px/1.2 'Nunito',sans-serif; color:var(--ink); background:#FFFDFA; outline:none;
+}
+.sheet select:focus { border-color:var(--peach); }
 .sheet .row { display:flex; gap:10px; margin-top:14px; }
 .sheet .row .btn-mini { flex:1 1 0; padding:12px 0; font-size:13px; }
 
@@ -268,14 +322,62 @@ body {
       <div class="gig-item"><p>Congenital conditions not covered for the baby — get every answer <span class="nb">in writing</span></p></div>
     </div>
     <div class="banner blush">💼 <b>You own the approvals.</b> Never let a test start without the GIG pre-approval — check it in the MyGIG Gulf app first.</div>
-    <div class="banner blue">📱 Card + claims live in <b>MyGIG Gulf</b> (Kit tab). Network question? Use its Provider Locator before paying anything.</div>
+    <div class="banner blue">📱 Card + claims live in the <b>MyGIG Gulf</b> app on your phone. Network question? Use its Provider Locator before paying anything.</div>
   </main>
 
-  <!-- ============ KIT ============ -->
-  <main class="page" id="page-kit">
+  <!-- ============ EXPENSES ============ -->
+  <main class="page" id="page-exp">
+    <div class="card week-card">
+      <div class="card-title">💸 Total expenses<span class="hint">all months · AED</span></div>
+      <div class="big" id="exTot" style="font-size:34px">AED 0.00</div>
+      <div class="sub" id="exThis">…</div>
+    </div>
+
     <div class="card">
-      <div class="card-title">📱 Dad's phone kit — iOS<span class="hint">tap to open App Store</span></div>
-      <div id="approws"></div>
+      <div class="card-title">🧾 Add an expense<span class="hint">AED only</span></div>
+      <div class="xf">
+        <div class="frow">
+          <input type="date" id="xfD">
+          <input type="number" id="xfA" inputmode="decimal" min="0" step="0.01" placeholder="Amount">
+        </div>
+        <div class="frow">
+          <select id="xfC"><option value="cab">Cab</option><option value="copay">Co-payment</option><option value="other">Other — write your own</option></select>
+        </div>
+        <div class="frow" id="xfTw" style="display:none">
+          <input type="text" id="xfT" placeholder="Write the description — e.g. Pharmacy">
+        </div>
+        <button class="btn-mini go" id="xfAdd">+ Add expense</button>
+      </div>
+    </div>
+
+    <div id="exwrap"></div>
+  </main>
+
+  <!-- ============ NOTES ============ -->
+  <main class="page" id="page-notes">
+    <div class="banner blue">📝 <b>Everything in your head, one place.</b> Appointments, reminders, to-dos and the doctor's words — saved only on this phone.</div>
+
+    <div class="card">
+      <div class="card-title">🗓 Appointments<span class="hint">next visit first</span></div>
+      <div id="apwrap"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⏰ Reminders<span class="hint">date is optional</span></div>
+      <div id="remwrap"></div>
+      <div class="add-row"><input type="text" id="remIn" placeholder="e.g. Folcum after breakfast"><input type="date" id="remD"><button class="btn-mini go" id="remAdd">Add</button></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">✅ To-do list<span class="hint">quick tasks</span></div>
+      <div id="tdwrap"></div>
+      <div class="add-row"><input type="text" id="tdIn" placeholder="Add a task…"><button class="btn-mini go" id="tdAdd">Add</button></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📌 Notes to remember<span class="hint">doctor's words, plans</span></div>
+      <div id="ntwrap"></div>
+      <div class="add-row"><button class="btn-mini go" id="ntAdd" style="flex:1 1 auto;padding:11px 0;font-size:13px">+ Write a note</button></div>
     </div>
 
     <div class="card">
@@ -297,12 +399,6 @@ body {
       <div class="ct-alert" id="ctAlert">🚕 5-1-1 pattern reached — 5 min apart, 1 min long. Call the hospital, time to go!</div>
       <div class="reset-line" style="margin-top:8px"><button id="ctClear">clear history</button></div>
     </div>
-
-    <div class="card">
-      <div class="card-title">🎒 Hospital bag<span class="hint" id="bagPct">0 / 20 packed</span></div>
-      <div id="bagwrap"></div>
-      <div class="banner blue" style="margin:12px 0 0">Target: <b>packed by week 34</b>, kept by the door. Car seat must be in <b>by week 35</b>.</div>
-    </div>
     <div class="reset-line"><button id="resetAll">reset everything</button></div>
   </main>
 
@@ -312,7 +408,8 @@ body {
     <button class="tab" data-tab="journey"><span class="ic">🗓️</span>Journey</button>
     <button class="tab" data-tab="lists"><span class="ic">✅</span>Lists</button>
     <button class="tab" data-tab="money"><span class="ic">💰</span>Money</button>
-    <button class="tab" data-tab="kit"><span class="ic">🎒</span>Kit</button>
+    <button class="tab" data-tab="exp"><span class="ic">🧾</span>Expenses</button>
+    <button class="tab" data-tab="notes"><span class="ic">📝</span>Notes</button>
   </div></nav>
 
   <!-- ============ SHEET ============ -->
@@ -405,35 +502,42 @@ const SECTIONS = [
      "Is the baby growing on track — anything to worry about in the scan?",
      "Which supplements or vaccines are next, and when?",
      "Which symptoms should make us call you immediately?",
-     "When is the next appointment — book it before we leave?"]}]}
+     "When is the next appointment — book it before we leave?"]}]},
+ { id:"s07", num:"07", em:"🎒", title:"Hospital Bag", wk:"pack by W34", note:"Target: <b>packed by week 34</b>, kept by the door. Car seat in by <b>week 35</b> — the hospital won't release you without it.", groups:[
+   { lbl:"Documents & money", cls:"c-mint", items:[
+     "Passports + visas — both of you","Marriage certificate","Emirates IDs — both","GIG card","Reports folder + pre-admission forms","Some cash + your card"]},
+   { lbl:"For her", cls:"c-blush", items:[
+     "Front-open nightdresses ×2","Toiletries + lip balm","Maternity pads","Nursing bras + slippers","Phone + long charger","Refillable water bottle"]},
+   { lbl:"For baby", cls:"c-peach", items:[
+     "Sleepsuits ×2–3","Going-home outfit","Nappies + wipes","Mittens + socks + cap","Muslin cloths"]},
+   { lbl:"Car & last checks", cls:"c-blue", items:[
+     "Car seat installed, rear-facing — by week 35","Fuel above half + night route known","Bag by the door"]}]}
 ];
 const WEEKS = ["W8","W12","W16","W20","W24","W28","W30","W32","W34","W36","W38","W40"];
-const APPS = [
- ["🛡️","MyGIG Gulf","Insurance — e-cards, approvals, claims, Provider Locator","https://apps.apple.com/ae/app/mygig-gulf/id1287026919"],
- ["🏥","Zulekha Hospitals","Appointments + lab reports — Friday's report goes to Vincent","https://apps.apple.com/ae/app/zulekha-hospitals/id914494489"],
- ["🤰","Pregnancy+ | Tracker App","Weekly updates to read together + appointment log","https://apps.apple.com/ae/app/pregnancy-tracker-app/id505864483"],
- ["👨","Dad Pregnancy Guide: Daddy Up","1-minute weekly read — what a dad does that week","https://apps.apple.com/ae/app/dad-pregnancy-guide-daddy-up/id1097347717"],
- ["📁","Google Drive","Scan + file every report and bill the same day","https://apps.apple.com/ae/search?term=google+drive"],
- ["📄","Adobe Scan: Mobile PDF Scanner","Clean PDFs of prescriptions and reports","https://apps.apple.com/ae/search?term=adobe+scan"],
- ["📅","Google Calendar","Appointments + \u201Cadd baby to GIG by day 30\u201D alert","https://apps.apple.com/ae/search?term=google+calendar"],
- ["🗒️","Google Keep","Bag list, big buys, running doctor-question list","https://apps.apple.com/ae/search?term=google+keep"],
- ["💊","LIFE Pharmacy","Folcum refills — prescription upload, fast delivery","https://apps.apple.com/ae/app/life-pharmacy/id1450835575"],
- ["🍔","Talabat","Her 5–6 small meals without kitchen smells","https://apps.apple.com/ae/search?term=talabat"],
- ["🚗","Careem","Rides to the hospital + food runs","https://apps.apple.com/ae/search?term=careem"],
- ["🛒","InstaShop","Groceries delivered to the door","https://apps.apple.com/ae/search?term=instashop"],
- ["🪪","UAE Pass","Birth certificate + baby documents after delivery","https://apps.apple.com/ae/app/uae-pass/id1377158818"]];
-const BAG = [
- { cat:"Documents & money", items:["Passports + visas — both of you","Marriage certificate","Emirates IDs — both","GIG card","Reports folder + pre-admission forms","Some cash + your card"]},
- { cat:"For her", items:["Front-open nightdresses ×2","Toiletries + lip balm","Maternity pads","Nursing bras + slippers","Phone + long charger","Refillable water bottle"]},
- { cat:"For baby", items:["Sleepsuits ×2–3","Going-home outfit","Nappies + wipes","Mittens + socks + cap","Muslin cloths"]},
- { cat:"Car & last checks", items:["Car seat installed, rear-facing","Fuel above half + night route known","Bag by the door"]}];
 
 /* ================= state ================= */
 const KEY = "dadHQ.v1";
 function load(){ try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch(e){ return null; } }
-let S = load() || { checks:{}, ms:{}, hosp:"", kick:{n:0,t0:0}, ct:{runs:[],active:0}, bag:{} };
+let S = load() || { checks:{}, ms:{}, hosp:"", kick:{n:0,t0:0}, ct:{runs:[],active:0}, appts:[], rems:[], todos:[], notes:[], exp:[], expFold:{}, seedN:0 };
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
 function esc(s){ return String(s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+
+/* ================= upgrade + first-run seeds ================= */
+if (S.bag) { for (const k in S.bag) if (S.bag[k]) S.checks["s07" + k.slice(1)] = true; delete S.bag; }
+["appts","rems","todos","notes"].forEach(k => { if (!Array.isArray(S[k])) S[k] = []; });
+if (!Array.isArray(S.exp)) S.exp = [];
+if (!S.expFold || typeof S.expFold !== "object") S.expFold = {};
+function nextDow(dw){ const t = new Date(); const d = new Date(t.getFullYear(), t.getMonth(), t.getDate() + (dw - t.getDay() + 7) % 7); return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); }
+if (!S.seedN) {
+  S.appts.push({ t:"Zulekha Hospital — hand reports to Dr. Vincent", d:nextDow(5), tm:"20:30", pl:"Zulekha Hospital, Sharjah" });
+  S.appts.push({ t:"Family & Health Promotion Clinic — visit together", d:nextDow(0), tm:"", pl:"Sharjah" });
+  S.rems.push({ t:"Folcum folic acid — 1 tablet morning + 1 evening, after food", d:"", done:false });
+  S.rems.push({ t:"Add the baby to GIG before day 30 after birth", d:"", done:false });
+  S.todos.push({ t:"Install MyGIG Gulf app — e-card + pre-approvals", done:false });
+  S.todos.push({ t:"Start the Lists tab — first-trimester checklist", done:false });
+  S.notes.push({ t:"Weekly bump photo", body:"Every Sunday — same corner, same light. Photo 1 is this Sunday." });
+  S.seedN = 1; save();
+}
 
 /* ================= week engine ================= */
 const LMP = new Date(2026,8,14), EDD = new Date(2027,5,21);
@@ -476,7 +580,8 @@ function renderSections(){
           + '<span style="flex:0 0 auto">'+sec.em+' '+sec.title+'</span>'
           + '<span class="hint">'+sec.wk+'</span></div>'
           + '<div class="psec"><i style="width:'+(total?done/total*100:0)+'%"></i></div>'
-          + '<div class="prog-lbl" style="margin:5px 0 2px;text-align:right">'+done+' / '+total+' done</div>';
+          + '<div class="prog-lbl" style="margin:5px 0 2px;text-align:right">'+done+' / '+total+' done</div>'
+          + (sec.note ? '<div class="banner blue" style="margin:6px 0 2px">'+sec.note+'</div>' : '');
     sec.groups.forEach((g,gi) => {
       h += '<div class="sublabel '+g.cls+'">'+g.lbl+'</div><ul class="pts">';
       g.items.forEach((it,ii) => {
@@ -608,28 +713,240 @@ document.getElementById("ctClear").addEventListener("click", () => {
 });
 setInterval(() => { if (S.ct.active) renderCT(); }, 1000);
 
-/* ================= bag ================= */
-function renderBag(){
-  const wrap = document.getElementById("bagwrap"); let total = 0, done = 0, h = "";
-  BAG.forEach((c,ci) => {
-    h += '<div class="bag-cat" style="color:var(--peach-deep)">'+c.cat+'</div><ul class="pts">';
-    c.items.forEach((it,ii) => {
-      const id = "b"+ci+"."+ii, on = !!S.bag[id]; total++; if (on) done++;
-      h += '<li data-id="'+id+'" class="'+(on?"did":"")+'"><span class="cb'+(on?" on":"")+'"></span><span class="tx">'+it+'</span></li>';
-    });
-    h += '</ul>';
-  });
-  wrap.innerHTML = h;
-  document.getElementById("bagPct").textContent = done + " / " + total + " packed";
-  wrap.querySelectorAll("li[data-id]").forEach(li => li.addEventListener("click", () => {
-    const id = li.dataset.id; S.bag[id] = !S.bag[id]; save(); renderBag();
-  }));
+/* ================= notes tab ================= */
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmtAP(tm){ if (!tm) return ""; let h = +String(tm).split(":")[0], m = +String(tm).split(":")[1]; const ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return h + ":" + String(m).padStart(2,"0") + " " + ap; }
+function dayChip(dISO){
+  if (!dISO) return "";
+  const d = new Date(dISO + "T00:00:00"), t = new Date(); t.setHours(0,0,0,0);
+  const dd = Math.round((d - t) / 86400000);
+  if (dd < 0) return '<span class="tag past">done</span>';
+  if (dd === 0) return '<span class="tag hot">today</span>';
+  if (dd === 1) return '<span class="tag hot">tomorrow</span>';
+  if (dd <= 7) return '<span class="tag hot">in ' + dd + ' days</span>';
+  return '<span class="tag">in ' + dd + ' days</span>';
 }
 
-/* ================= apps ================= */
-document.getElementById("approws").innerHTML = APPS.map(a =>
-  '<a class="app-row" href="'+a[3]+'" target="_blank" rel="noopener"><span class="ic">'+a[0]+'</span>'
-  + '<span class="t"><b>'+a[1]+'</b><span>'+a[2]+'</span></span><span class="go">STORE ›</span></a>').join("");
+/* ---- appointments ---- */
+function renderAppts(){
+  const wrap = document.getElementById("apwrap");
+  const rows = S.appts.map((a,i) => ({ a, i })).sort((x,y) =>
+    (x.a.d || "9999").localeCompare(y.a.d || "9999") || (x.a.tm || "99").localeCompare(y.a.tm || "99"));
+  wrap.innerHTML = rows.map(r => {
+    const d = r.a.d ? new Date(r.a.d + "T00:00:00") : null;
+    return '<div class="ap-row" data-ap="' + r.i + '"><div class="ap-date"><b>' + (d ? d.getDate() : "·") + '</b><span>' + (d ? MON[d.getMonth()] : "—") + '</span></div>'
+      + '<div class="ap-t"><b>' + esc(r.a.t) + '</b><span>' + [r.a.tm ? fmtAP(r.a.tm) : "", r.a.pl || ""].filter(Boolean).join(" · ") + '</span>' + dayChip(r.a.d) + '</div>'
+      + '<button class="x-btn" data-apx="' + r.i + '">✕</button></div>';
+  }).join("") || '<div class="empty">No appointments yet — add the next visit.</div>';
+  wrap.innerHTML += '<div class="add-row"><button class="btn-mini go" id="apAdd" style="flex:1 1 auto;padding:11px 0;font-size:13px">+ Add appointment</button></div>';
+  document.getElementById("apAdd").addEventListener("click", () => openAppt(-1));
+  wrap.querySelectorAll("[data-apx]").forEach(b => b.addEventListener("click", e => {
+    e.stopPropagation(); if (!confirm("Delete this appointment?")) return;
+    S.appts.splice(+b.dataset.apx, 1); save(); renderAppts();
+  }));
+  wrap.querySelectorAll("[data-ap]").forEach(row => row.addEventListener("click", () => openAppt(+row.dataset.ap)));
+}
+function openAppt(idx){
+  const a = idx >= 0 ? S.appts[idx] : { t:"", d:"", tm:"", pl:"" };
+  document.getElementById("sheetTitle").textContent = idx >= 0 ? "Edit appointment" : "New appointment";
+  document.getElementById("sheetBody").innerHTML =
+    '<label>What</label><input id="shT" placeholder="e.g. Dating scan — Zulekha" value="' + esc(a.t) + '">'
+  + '<label>Date</label><input id="shD" type="date" value="' + esc(a.d) + '">'
+  + '<label>Time — optional</label><input id="shTm" type="time" value="' + esc(a.tm) + '">'
+  + '<label>Place / doctor — optional</label><input id="shP" placeholder="e.g. Zulekha — Dr. Vincent" value="' + esc(a.pl) + '">';
+  document.getElementById("sheetBtns").innerHTML = (idx >= 0 ? '<button class="btn-mini danger" id="shDel">Remove</button>' : '')
+    + '<button class="btn-mini" id="shCancel">Cancel</button><button class="btn-mini go" id="shSave">Save</button>';
+  showSheet();
+  document.getElementById("shCancel").onclick = closeSheet;
+  if (idx >= 0) document.getElementById("shDel").onclick = () => { S.appts.splice(idx, 1); save(); renderAppts(); closeSheet(); };
+  document.getElementById("shSave").onclick = () => {
+    const t = document.getElementById("shT").value.trim(), d = document.getElementById("shD").value;
+    if (!t) { document.getElementById("shT").focus(); return; }
+    if (!d) { document.getElementById("shD").focus(); return; }
+    const rec = { t, d, tm: document.getElementById("shTm").value, pl: document.getElementById("shP").value.trim() };
+    if (idx >= 0) S.appts[idx] = rec; else S.appts.push(rec);
+    save(); renderAppts(); closeSheet();
+  };
+}
+
+/* ---- reminders ---- */
+function renderRems(){
+  const wrap = document.getElementById("remwrap");
+  const rows = S.rems.map((r,i) => ({ r, i })).sort((x,y) => (x.r.done ? 1 : 0) - (y.r.done ? 1 : 0));
+  wrap.innerHTML = rows.map(x =>
+    '<div class="lt-row' + (x.r.done ? " did" : "") + '"><span class="cb' + (x.r.done ? " on" : "") + '" data-rem="' + x.i + '"></span>'
+    + '<span class="tx">' + esc(x.r.t) + (x.r.d ? '<span class="when">' + fmtDate(x.r.d) + '</span>' : "") + '</span>'
+    + '<button class="x-btn" data-remx="' + x.i + '">✕</button></div>').join("")
+    || '<div class="empty">Nothing pending — add a reminder below.</div>';
+  wrap.querySelectorAll("[data-rem]").forEach(cb => cb.addEventListener("click", () => {
+    const r = S.rems[+cb.dataset.rem]; r.done = !r.done; save(); renderRems();
+  }));
+  wrap.querySelectorAll("[data-remx]").forEach(b => b.addEventListener("click", () => {
+    S.rems.splice(+b.dataset.remx, 1); save(); renderRems();
+  }));
+}
+function addRem(){
+  const inp = document.getElementById("remIn"), d = document.getElementById("remD").value, t = inp.value.trim();
+  if (!t) { inp.focus(); return; }
+  S.rems.push({ t, d, done:false }); save();
+  inp.value = ""; document.getElementById("remD").value = ""; renderRems();
+}
+document.getElementById("remAdd").addEventListener("click", addRem);
+document.getElementById("remIn").addEventListener("keydown", e => { if (e.key === "Enter") addRem(); });
+
+/* ---- to-do list ---- */
+function renderTodos(){
+  const wrap = document.getElementById("tdwrap");
+  const rows = S.todos.map((r,i) => ({ r, i })).sort((x,y) => (x.r.done ? 1 : 0) - (y.r.done ? 1 : 0));
+  wrap.innerHTML = rows.map(x =>
+    '<div class="lt-row' + (x.r.done ? " did" : "") + '"><span class="cb' + (x.r.done ? " on" : "") + '" data-td="' + x.i + '"></span>'
+    + '<span class="tx">' + esc(x.r.t) + '</span>'
+    + '<button class="x-btn" data-tdx="' + x.i + '">✕</button></div>').join("")
+    || '<div class="empty">Nothing here — add your first task below.</div>';
+  wrap.querySelectorAll("[data-td]").forEach(cb => cb.addEventListener("click", () => {
+    const r = S.todos[+cb.dataset.td]; r.done = !r.done; save(); renderTodos();
+  }));
+  wrap.querySelectorAll("[data-tdx]").forEach(b => b.addEventListener("click", () => {
+    S.todos.splice(+b.dataset.tdx, 1); save(); renderTodos();
+  }));
+}
+function addTodo(){
+  const inp = document.getElementById("tdIn"), t = inp.value.trim();
+  if (!t) { inp.focus(); return; }
+  S.todos.push({ t, done:false }); save(); inp.value = ""; renderTodos();
+}
+document.getElementById("tdAdd").addEventListener("click", addTodo);
+document.getElementById("tdIn").addEventListener("keydown", e => { if (e.key === "Enter") addTodo(); });
+
+/* ---- notes to remember ---- */
+function renderNotes(){
+  const wrap = document.getElementById("ntwrap");
+  wrap.innerHTML = S.notes.map((n,i) =>
+    '<div class="note-card" data-nt="' + i + '"><b>' + esc(n.t) + '</b><p>' + esc(n.body) + '</p><button class="x-btn" data-ntx="' + i + '">✕</button></div>').join("")
+    || '<div class="empty">Empty for now — write down what the doctor says.</div>';
+  wrap.querySelectorAll("[data-ntx]").forEach(b => b.addEventListener("click", e => {
+    e.stopPropagation(); if (!confirm("Delete this note?")) return;
+    S.notes.splice(+b.dataset.ntx, 1); save(); renderNotes();
+  }));
+  wrap.querySelectorAll("[data-nt]").forEach(c => c.addEventListener("click", () => openNote(+c.dataset.nt)));
+}
+function openNote(idx){
+  const n = idx >= 0 ? S.notes[idx] : { t:"", body:"" };
+  document.getElementById("sheetTitle").textContent = idx >= 0 ? "Edit note" : "New note";
+  document.getElementById("sheetBody").innerHTML =
+    '<label>Title</label><input id="shT" placeholder="e.g. Questions for next visit" value="' + esc(n.t) + '">'
+  + '<label>Note</label><textarea id="shB" placeholder="Write it exactly as the doctor said…">' + esc(n.body) + '</textarea>';
+  document.getElementById("sheetBtns").innerHTML = (idx >= 0 ? '<button class="btn-mini danger" id="shDel">Remove</button>' : '')
+    + '<button class="btn-mini" id="shCancel">Cancel</button><button class="btn-mini go" id="shSave">Save</button>';
+  showSheet();
+  document.getElementById("shCancel").onclick = closeSheet;
+  if (idx >= 0) document.getElementById("shDel").onclick = () => { S.notes.splice(idx, 1); save(); renderNotes(); closeSheet(); };
+  document.getElementById("shSave").onclick = () => {
+    const t = document.getElementById("shT").value.trim(), b = document.getElementById("shB").value.trim();
+    if (!t) { document.getElementById("shT").focus(); return; }
+    if (idx >= 0) S.notes[idx] = { t, body:b }; else S.notes.push({ t, body:b });
+    save(); renderNotes(); closeSheet();
+  };
+}
+document.getElementById("ntAdd").addEventListener("click", () => openNote(-1));
+
+/* ================= expenses tab ================= */
+const MO = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function todayISO(){ const t = new Date(); return t.getFullYear() + "-" + String(t.getMonth()+1).padStart(2,"0") + "-" + String(t.getDate()).padStart(2,"0"); }
+function fmtAED(n){ return n.toLocaleString("en", { minimumFractionDigits:2, maximumFractionDigits:2 }); }
+function expId(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+function catLabel(e){ return e.c === "other" ? (e.t || "Other") : (e.c === "copay" ? "Co-payment" : "Cab"); }
+function renderExp(){
+  const tot = S.exp.reduce((s,e) => s + e.a, 0);
+  document.getElementById("exTot").textContent = "AED " + fmtAED(tot);
+  const tISO = todayISO(), curYm = tISO.slice(0,7);
+  const cur = S.exp.filter(e => e.d.slice(0,7) === curYm);
+  const curSpent = cur.reduce((s,e) => s + e.a, 0);
+  document.getElementById("exThis").innerHTML = "<b>" + MO[+curYm.slice(5,7)-1] + " so far:</b> AED " + fmtAED(curSpent) + " · " + cur.length + (cur.length === 1 ? " entry" : " entries");
+  const wrap = document.getElementById("exwrap");
+  if (!S.exp.length) { wrap.innerHTML = '<div class="card"><div class="empty">No expenses yet — add the first one above.</div></div>'; return; }
+  const groups = {};
+  S.exp.forEach(e => { const ym = e.d.slice(0,7); (groups[ym] = groups[ym] || []).push(e); });
+  const yms = Object.keys(groups).sort().reverse();
+  wrap.innerHTML = yms.map(ym => {
+    const list = groups[ym].slice().sort((a,b) => b.d.localeCompare(a.d) || (b.id > a.id ? 1 : -1));
+    const mtot = list.reduce((s,e) => s + e.a, 0);
+    const catSums = {};
+    list.forEach(e => { catSums[e.c] = (catSums[e.c] || 0) + e.a; });
+    const cats = ["cab","copay","other"].filter(c => catSums[c] > 0)
+      .map(c => (c === "cab" ? "Cab" : c === "copay" ? "Co-payment" : "Other") + " AED " + fmtAED(catSums[c])).join(" · ");
+    const folded = !!S.expFold[ym];
+    return '<div class="card" data-mcard="' + ym + '">'
+      + '<div class="mh' + (folded ? " folded" : "") + '" data-fold="' + ym + '"><span class="arr">▾</span>'
+      + '<div class="mh-t"><b>' + MO[+ym.slice(5,7)-1] + ' ' + ym.slice(0,4) + '</b><span>' + list.length + (list.length === 1 ? " entry" : " entries") + '</span></div>'
+      + '<div class="mh-r"><b>AED ' + fmtAED(mtot) + '</b><button class="mh-add" data-addm="' + ym + '">＋</button></div></div>'
+      + '<div class="mh-cats">' + cats + '</div>'
+      + '<div class="x-rows' + (folded ? " ex-folded" : "") + '" data-rows="' + ym + '">'
+      + list.map(e => '<div class="x-row" data-id="' + e.id + '"><div class="x-main"><b>' + esc(catLabel(e)) + '</b><span>' + (+e.d.slice(8,10)) + ' ' + MON[+e.d.slice(5,7)-1] + '</span></div>'
+        + '<span class="x-amt">AED ' + fmtAED(e.a) + '</span>'
+        + '<button class="x-btn" data-eed="' + e.id + '">✎</button>'
+        + '<button class="x-btn" data-edel="' + e.id + '">✕</button></div>').join("")
+      + '</div></div>';
+  }).join("");
+  wrap.querySelectorAll("[data-fold]").forEach(mh => mh.addEventListener("click", () => {
+    const ym = mh.dataset.fold; S.expFold[ym] = !S.expFold[ym]; save(); renderExp();
+  }));
+  wrap.querySelectorAll("[data-addm]").forEach(b => b.addEventListener("click", e => {
+    e.stopPropagation();
+    const ym = b.dataset.addm;
+    openExpSheet(null, ym === todayISO().slice(0,7) ? todayISO() : ym + "-01");
+  }));
+  wrap.querySelectorAll("[data-eed]").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); openExpSheet(b.dataset.eed); }));
+  wrap.querySelectorAll("[data-edel]").forEach(b => b.addEventListener("click", e => {
+    e.stopPropagation(); if (!confirm("Delete this expense?")) return;
+    S.exp = S.exp.filter(x => x.id !== b.dataset.edel); save(); renderExp();
+  }));
+  wrap.querySelectorAll(".x-row").forEach(r => r.addEventListener("click", () => openExpSheet(r.dataset.id)));
+}
+function openExpSheet(id, presetD){
+  const e = id ? S.exp.find(x => x.id === id) : null;
+  document.getElementById("sheetTitle").textContent = e ? "Edit expense" : "New expense";
+  document.getElementById("sheetBody").innerHTML =
+    '<label>Date</label><input id="shXD" type="date" value="' + esc(e ? e.d : (presetD || todayISO())) + '">'
+  + '<label>Description</label><select id="shXC"><option value="cab">Cab</option><option value="copay">Co-payment</option><option value="other">Other — write your own</option></select>'
+  + '<div id="shXTw" style="display:none"><label>Write the description</label><input id="shXT" placeholder="e.g. Pharmacy, groceries" value="' + esc(e && e.c === "other" ? e.t : "") + '"></div>'
+  + '<label>Amount — AED</label><input id="shXA" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00" value="' + (e ? e.a : "") + '">';
+  document.getElementById("sheetBtns").innerHTML = (e ? '<button class="btn-mini danger" id="shXDel">Remove</button>' : '')
+    + '<button class="btn-mini" id="shCancel">Cancel</button><button class="btn-mini go" id="shSave">Save</button>';
+  const sel = document.getElementById("shXC"); sel.value = e ? e.c : "cab";
+  const tw = document.getElementById("shXTw");
+  const syncT = () => { tw.style.display = sel.value === "other" ? "block" : "none"; };
+  syncT(); sel.addEventListener("change", syncT);
+  showSheet();
+  document.getElementById("shCancel").onclick = closeSheet;
+  if (e) document.getElementById("shXDel").onclick = () => { S.exp = S.exp.filter(x => x.id !== e.id); save(); renderExp(); closeSheet(); };
+  document.getElementById("shSave").onclick = () => {
+    const d = document.getElementById("shXD").value, c = sel.value, t = document.getElementById("shXT").value.trim(), a = parseFloat(document.getElementById("shXA").value);
+    if (!d) { document.getElementById("shXD").focus(); return; }
+    if (!(a > 0)) { document.getElementById("shXA").focus(); return; }
+    if (c === "other" && !t) { document.getElementById("shXT").focus(); return; }
+    const rec = { id: e ? e.id : expId(), d, c, t: c === "other" ? t : "", a: Math.round(a * 100) / 100 };
+    if (e) S.exp = S.exp.map(x => x.id === e.id ? rec : x); else S.exp.push(rec);
+    save(); renderExp(); closeSheet();
+  };
+}
+const xfC = document.getElementById("xfC"), xfT = document.getElementById("xfT");
+xfC.addEventListener("change", () => { document.getElementById("xfTw").style.display = xfC.value === "other" ? "" : "none"; });
+function addQuick(){
+  const d = document.getElementById("xfD").value, a = parseFloat(document.getElementById("xfA").value);
+  const c = xfC.value, t = xfT.value.trim();
+  if (!d) { document.getElementById("xfD").focus(); return; }
+  if (!(a > 0)) { document.getElementById("xfA").focus(); return; }
+  if (c === "other" && !t) { xfT.focus(); return; }
+  S.exp.push({ id: expId(), d, c, t: c === "other" ? t : "", a: Math.round(a * 100) / 100 });
+  save();
+  document.getElementById("xfA").value = ""; xfT.value = "";
+  renderExp();
+  document.getElementById("xfA").focus();
+}
+document.getElementById("xfAdd").addEventListener("click", addQuick);
+["xfA", "xfT"].forEach(id => document.getElementById(id).addEventListener("keydown", e => { if (e.key === "Enter") addQuick(); }));
+document.getElementById("xfD").value = todayISO();
 
 /* ================= reset ================= */
 document.getElementById("resetAll").addEventListener("click", () => {
@@ -640,7 +957,7 @@ document.getElementById("resetAll").addEventListener("click", () => {
 
 /* ================= init ================= */
 renderWeek(); setInterval(renderWeek, 60000);
-renderSections(); renderJourney(); renderHosp(); renderKick(); renderCT(); renderBag();
+renderSections(); renderJourney(); renderHosp(); renderKick(); renderCT(); renderAppts(); renderRems(); renderTodos(); renderNotes(); renderExp();
 </script>
 </body>
 </html>
